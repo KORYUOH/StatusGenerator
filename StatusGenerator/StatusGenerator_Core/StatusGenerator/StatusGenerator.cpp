@@ -50,7 +50,7 @@ void IStatusGenerator::RandomInit()
 		FreeEngine();
 	}
 
-	mEngine = new mt19937( std::random_device() );
+	mEngine = new mt19937( std::random_device()() );
 
 }
 

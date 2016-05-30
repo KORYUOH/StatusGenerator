@@ -32,8 +32,10 @@ class IStatusGenerator
 
 		/**
 		 * @brief	生成
+		 * @note	Use Override
 		 */
-		virtual void Generate() = 0;
+		template< typename _Ty>
+		void Generate(_Ty* Data){};
 
 		/**
 		 * @brief	生成シードの設定
