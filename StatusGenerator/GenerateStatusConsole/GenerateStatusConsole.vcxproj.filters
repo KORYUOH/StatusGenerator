@@ -2,5 +2,18 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\StatusGenerator\StatusGenerator.cpp">
+      <Filter>StatusGenerator</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="StatusGenerator">
+      <UniqueIdentifier>{d09e383f-d891-4a50-b4f5-743b61211b51}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\StatusGenerator\StatusGenerator.h">
+      <Filter>StatusGenerator</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

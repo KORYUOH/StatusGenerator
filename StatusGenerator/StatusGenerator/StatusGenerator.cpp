@@ -1,10 +1,12 @@
 ﻿#include "StatusGenerator.h"
 #include	<random>
+#include	<algorithm>
 using namespace std;
 
 //================================================================================
 // コンストラクタ
-IStatusGenerator::IStatusGenerator()
+IStatusGenerator::IStatusGenerator():
+	mEngine(nullptr)
 {
 }
 
@@ -18,6 +20,12 @@ void IStatusGenerator::SetSeed( const std::string& seed )
 	{
 		FreeEngine();
 	}
+
+	unsigned int s = 0;
+
+	std::for_each( seed.begin() , seed.end() , [&]( char c ){ s += c; } );
+
+	mEngine = new mt19937( s );
 	
 }
 
