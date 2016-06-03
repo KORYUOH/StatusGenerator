@@ -5,15 +5,34 @@
     <ClCompile Include="..\StatusGenerator\StatusGenerator.cpp">
       <Filter>StatusGenerator</Filter>
     </ClCompile>
+    <ClCompile Include="Data\IDataIO.cpp">
+      <Filter>Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\Memory\DataIOBase.cpp">
+      <Filter>Data\Memory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="StatusGenerator">
       <UniqueIdentifier>{d09e383f-d891-4a50-b4f5-743b61211b51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{8b0b8822-4fc5-4939-97f3-a25b49f58d0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data\Memory">
+      <UniqueIdentifier>{e471100d-c1bd-41bf-9771-225325706107}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\StatusGenerator\StatusGenerator.h">
       <Filter>StatusGenerator</Filter>
     </ClInclude>
+    <ClInclude Include="Data\IDataIO.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\Memory\DataIOBase.h">
+      <Filter>Data\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="const.h" />
   </ItemGroup>
 </Project>

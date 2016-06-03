@@ -1,6 +1,8 @@
 ﻿#include	<iostream>
+#include	"const.h"
 #include	"../StatusGenerator/StatusGenerator.h"
 using namespace std;
+
 
 struct Params
 {
@@ -11,18 +13,21 @@ struct Params
 
 class Generator : public IStatusGenerator
 {
+	DECLARE_INHERIT_CLASS( IStatusGenerator )
 	public:
 	void Generate(struct Params* p)
 	{
-		p->hp	=	Roll({1,6});
-		p->atk	=	Roll({1,6});
-		p->def	=	Roll({1,6});
+		p->hp	=	Roll( {50 , 150} );
+		p->atk	=	Dice(3,5);
+		p->def	=	Dice(3,5);
 	}
 };
 
 int main(int argc, char* argv[])
 {
-	std::cout << "Hello,World!" << std::endl;
+	CHECKLEAK
+	
+		std::cout << "Hello,World!" << std::endl;
 
 	Generator g;
 

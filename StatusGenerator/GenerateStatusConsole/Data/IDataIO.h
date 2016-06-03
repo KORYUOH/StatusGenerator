@@ -1,7 +1,7 @@
-#ifndef _IDATAIO_H_
-#define <{1:_IDATAIO_H_}>
+﻿#ifndef _IDATAIO_H_
+#define _IDATAIO_H_
 #pragma once
-#include <string><`0`>
+#include <string>
 
 class IDataIO
 {
@@ -30,18 +30,18 @@ class IDataIO
 		/** 
 		 * @brief		ファイルを開く
 		 */
-		void Open();
+		virtual void Open();
 
 		/** 
 		 * @brief		ファイルを開いているか
 		 * @return		開いていればtrue
 		 */
-		bool IsOpen()const;
+		virtual bool IsOpen()const;
 		
 		/** 
 		 * @brief		ファイルを閉じる
 		 */
-		void Close();
+		virtual void Close();
 
 	protected:
 
@@ -50,4 +50,4 @@ class IDataIO
 
 };
 
-#endif<`0`>
+#endif

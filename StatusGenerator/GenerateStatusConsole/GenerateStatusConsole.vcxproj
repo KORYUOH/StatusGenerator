@@ -77,10 +77,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\StatusGenerator\StatusGenerator.cpp" />
+    <ClCompile Include="Data\IDataIO.cpp" />
+    <ClCompile Include="Data\Memory\DataIOBase.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\StatusGenerator\StatusGenerator.h" />
+    <ClInclude Include="const.h" />
+    <ClInclude Include="Data\IDataIO.h" />
+    <ClInclude Include="Data\Memory\DataIOBase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,5 @@
 ﻿#include "IDataIO.h"
-#include <iostream><`0`>
+#include <iostream>
 
 //================================================================================
 // コンストラクタ
@@ -17,7 +17,7 @@ IDataIO::IDataIO(const std::string& aPath)
 
 //================================================================================
 // コンストラクタ
-IDataIO::IDataIO(const std::string& aFolder , const std::string& aFileName)
+IDataIO::IDataIO(const std::string& aFolder , const std::string& aFileName):
 	FolderPath(aFolder),
 	FileName(aFileName)
 {

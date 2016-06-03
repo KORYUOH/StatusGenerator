@@ -28,7 +28,7 @@ class IStatusGenerator
 		/**
 		 * @brief	デストラクタ
 		 */
-		virtual ~IStatusGenerator(){};
+		virtual ~IStatusGenerator(){FreeEngine();};
 
 		/**
 		 * @brief	生成
@@ -51,6 +51,15 @@ class IStatusGenerator
 		 */
 		int Roll( const struct GenerateLimit& limit );
 
+		/** 
+		 * @brief		ダイスを振る xdy+s n個のy面ダイス
+		 * @param		quntity : 個数
+		 * @param		surface : 面
+		 * @param		add = 0 : 加算値(省略可能)
+		 * @return		結果
+		 */
+		int Dice( int quantity , int surface , int add = 0 );
+
 		/**
 		 * @brief	エンジンを持っているか？
 		 * @return 持っていればtrue
@@ -68,6 +77,9 @@ class IStatusGenerator
 		void FreeEngine();
 
 	private:
+
+		///シード値
+		unsigned int mSeed;
 	
 		///エンジン
 		std::mt19937* mEngine;

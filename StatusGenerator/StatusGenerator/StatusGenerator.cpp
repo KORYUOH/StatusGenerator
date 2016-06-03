@@ -6,6 +6,7 @@ using namespace std;
 //================================================================================
 // コンストラクタ
 IStatusGenerator::IStatusGenerator():
+	mSeed(0),
 	mEngine(nullptr)
 {
 }
@@ -24,8 +25,10 @@ void IStatusGenerator::SetSeed( const std::string& seed )
 	unsigned int s = 0;
 
 	std::for_each( seed.begin() , seed.end() , [&]( char c ){ s += c; } );
+	
+	mSeed = s;
 
-	mEngine = new mt19937( s );
+	mEngine = new mt19937( mSeed );
 	
 }
 
@@ -40,6 +43,22 @@ int IStatusGenerator::Roll( const struct GenerateLimit& limit )
 	std::uniform_int_distribution<int> mDistribution(limit.MinLimit , limit.MaxLimit);
 
 	return mDistribution( *mEngine );
+}
+
+//================================================================================
+// ダイスを振る
+int IStatusGenerator::Dice( int quantity , int surface , int add )
+{
+	int result = 0;
+
+	for( int i = 0 ; i < quantity ; ++i )
+	{
+		result += Roll( { 1 , surface} );
+	}
+
+	result += add;
+
+	return result;
 }
 
 //================================================================================
@@ -58,7 +77,9 @@ void IStatusGenerator::RandomInit()
 		FreeEngine();
 	}
 
-	mEngine = new mt19937( std::random_device()() );
+	mSeed = std::random_device()();
+
+	mEngine = new mt19937( mSeed );
 
 }
 
@@ -66,6 +87,9 @@ void IStatusGenerator::RandomInit()
 // エンジンを開放
 void IStatusGenerator::FreeEngine()
 {
+	if( !HasEngine() )
+		return;
+	delete mEngine;
 	mEngine = nullptr;
 }
 
