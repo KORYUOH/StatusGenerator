@@ -2,6 +2,7 @@
 #include	<fstream>
 #include	"const.h"
 #include	"../StatusGenerator/StatusGenerator.h"
+#include	"../Cript/Cripter.h"
 using namespace std;
 
 
@@ -66,12 +67,9 @@ int main(int argc, char* argv[])
 
 	{
 		Params x = p;
-		char* ptr = (char*)&x;
-		for( int i = 0 ; i < size ; ++i )
-		{
-			*ptr ^= 'a';
-			++ptr;
-		}
+		Cripter cript;
+		cript.SetPass( "engine" );
+		cript.Encrypt( &x , sizeof(x) );
 		ofs2.write( (char*) &x, sizeof( x ) );
 		ofs2.close();
 	}
@@ -103,18 +101,15 @@ int main(int argc, char* argv[])
 	ifs2.open("data2.dat" , ios::in|ios::binary);
 	if( !ifs2.fail() )
 	{
+		Cripter cript;
+		cript.SetPass( "engine" );
 		cout << "R" << endl;
 		cout << "HP : " <<	r.hp	<< endl;
 		cout << "ATK : " <<	r.atk	<< endl;
 		cout << "DEF : " <<	r.def	<< endl;
 		int siz = sizeof( r ) / sizeof( char );
 			ifs2.read( (char*) &r , sizeof(r) );
-			char* u = (char*)&r;
-		for( int i = 0; i < siz ; ++i )
-		{
-			*u ^= 'a';
-			++u;
-		}
+		cript.Encrypt( &r , sizeof(r) );
 		cout << "R============" << endl;
 		cout << "HP : " <<	r.hp	<< endl;
 		cout << "ATK : " <<	r.atk	<< endl;
@@ -122,7 +117,6 @@ int main(int argc, char* argv[])
 
 	}
 	ifs2.close();
-
 
 
 	return 0;

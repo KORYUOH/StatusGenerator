@@ -2,6 +2,7 @@
 #define _IDATAIO_H_
 #pragma once
 #include <string>
+#include <fstream>
 
 class IDataIO
 {
@@ -37,6 +38,13 @@ class IDataIO
 		 * @return		開いていればtrue
 		 */
 		virtual bool IsOpen()const;
+
+		/**
+		 * @brief		データの読み書き
+		 * @param	ptr : データポインタ
+		 * @param	size : データサイズ
+		 */
+		virtual void ReadWrite(void* ptr , std::size_t size );
 		
 		/** 
 		 * @brief		ファイルを閉じる
@@ -47,6 +55,7 @@ class IDataIO
 
 		std::string FolderPath;
 		std::string FileName;
+		std::fstream mStream;
 
 };
 

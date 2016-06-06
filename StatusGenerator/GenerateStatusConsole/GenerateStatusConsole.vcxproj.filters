@@ -11,6 +11,9 @@
     <ClCompile Include="Data\Memory\DataIOBase.cpp">
       <Filter>Data\Memory</Filter>
     </ClCompile>
+    <ClCompile Include="..\Cript\Cripter.cpp">
+      <Filter>Cript</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="StatusGenerator">
@@ -21,6 +24,9 @@
     </Filter>
     <Filter Include="Data\Memory">
       <UniqueIdentifier>{e471100d-c1bd-41bf-9771-225325706107}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Cript">
+      <UniqueIdentifier>{f784f107-54b0-47d7-a992-5b23dbe08b16}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -34,5 +40,8 @@
       <Filter>Data\Memory</Filter>
     </ClInclude>
     <ClInclude Include="const.h" />
+    <ClInclude Include="..\Cript\Cripter.h">
+      <Filter>Cript</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
