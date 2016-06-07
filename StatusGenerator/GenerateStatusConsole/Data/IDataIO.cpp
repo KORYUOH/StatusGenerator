@@ -5,13 +5,17 @@
 // コンストラクタ
 IDataIO::IDataIO():
 	FolderPath(""),
-	FileName("")
+	FileName(""),
+	mStream( nullptr )
 {
 }
 
 //================================================================================
 // コンストラクタ
-IDataIO::IDataIO(const std::string& aPath)
+IDataIO::IDataIO(const std::string& aPath):
+	FolderPath(""),
+	FileName(""),
+	mStream( nullptr )
 {
 }
 
@@ -19,7 +23,8 @@ IDataIO::IDataIO(const std::string& aPath)
 // コンストラクタ
 IDataIO::IDataIO(const std::string& aFolder , const std::string& aFileName):
 	FolderPath(aFolder),
-	FileName(aFileName)
+	FileName(aFileName),
+	mStream( nullptr )
 {
 }
 
@@ -52,6 +57,12 @@ void IDataIO::Close()
 //================================================================================
 // データの読み書き
 void IDataIO::ReadWrite( void* ptr , size_t size )
+{
+}
+
+//================================================================================
+// データの先頭位置をシーク
+void IDataIO::Seek( size_t size , bool reverse )
 {
 }
 

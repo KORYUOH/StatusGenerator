@@ -45,6 +45,13 @@ class IDataIO
 		 * @param	size : データサイズ
 		 */
 		virtual void ReadWrite(void* ptr , std::size_t size );
+
+		/** 
+		 * @brief		データの先頭位置をシーク
+		 * @param		size : 移動サイズ
+		 * @param		reverse = false : 逆転フラグ
+		 */
+		virtual void Seek( std::size_t size , bool reverse = false );
 		
 		/** 
 		 * @brief		ファイルを閉じる
@@ -55,7 +62,7 @@ class IDataIO
 
 		std::string FolderPath;
 		std::string FileName;
-		std::fstream mStream;
+		std::fstream* mStream;
 
 };
 

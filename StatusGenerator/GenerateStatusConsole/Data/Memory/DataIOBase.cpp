@@ -16,11 +16,6 @@ DataIOBase::DataIOBase( const string& aFolder , const string& aFileName ):Super(
 {
 }
 
-//================================================================================
-// ファイルを開く
-void DataIOBase::Open()
-{
-}
 
 
 

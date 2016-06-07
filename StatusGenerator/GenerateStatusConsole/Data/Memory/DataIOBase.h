@@ -26,10 +26,5 @@ class DataIOBase : public IDataIO
 		 */
 		virtual ~DataIOBase(){};
 
-		/** 
-		 * @brief		ファイルを開く
-		 */
-		virtual void Open()override;
-
 };
 #endif
