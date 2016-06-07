@@ -14,6 +14,9 @@
     <ClCompile Include="..\Cript\Cripter.cpp">
       <Filter>Cript</Filter>
     </ClCompile>
+    <ClCompile Include="Data\Memory\DataWriter.cpp">
+      <Filter>Data\Memory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="StatusGenerator">
@@ -42,6 +45,9 @@
     <ClInclude Include="const.h" />
     <ClInclude Include="..\Cript\Cripter.h">
       <Filter>Cript</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\Memory\DataWriter.h">
+      <Filter>Data\Memory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

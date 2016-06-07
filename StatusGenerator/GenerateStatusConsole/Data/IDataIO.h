@@ -59,10 +59,18 @@ class IDataIO
 		virtual void Close();
 
 	protected:
+		
+		/** 
+		 * @brief		Streamを持っているか
+		 * @return		持っていればtrue
+		 */
+		bool HasStream()const;
+
+	protected:
 
 		std::string FolderPath;
 		std::string FileName;
-		std::fstream* mStream;
+		std::ios* mStream;
 
 };
 

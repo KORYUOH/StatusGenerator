@@ -66,6 +66,13 @@ void IDataIO::Seek( size_t size , bool reverse )
 {
 }
 
+//================================================================================
+// ストリームを持っているか
+bool IDataIO::HasStream()const
+{
+	return nullptr != mStream;
+}
+
 
 
 
