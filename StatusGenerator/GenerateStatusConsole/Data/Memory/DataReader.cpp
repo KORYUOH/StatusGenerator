@@ -1,26 +1,26 @@
-﻿#include	"DataWriter.h"
+﻿#include	"DataReader.h"
 #include	<fstream>
 using namespace std;
 
 //================================================================================
 // コンストラクタ
-DataWriter::DataWriter():
+DataReader::DataReader():
 	Super()
 {
-	SetIOFlag( ios::out );
+	SetIOFlag( ios::in );
 }
 
 //================================================================================
 // コンストラクタ
-DataWriter::DataWriter( const string& aFolder , const string& aFileName ):
+DataReader::DataReader( const string& aFolder , const string& aFileName ):
 	Super( aFolder , aFileName )
 {
-	SetIOFlag( ios::out );
+	SetIOFlag( ios::in );
 }
 
 //================================================================================
 // 開く
-void DataWriter::Open()
+void DataReader::Open()
 {
 	if( HasStream() )
 	{
@@ -33,19 +33,19 @@ void DataWriter::Open()
 
 //================================================================================
 // 読み書き
-void DataWriter::ReadWrite( void* data , std::size_t size )
+void DataReader::ReadWrite( void* data , std::size_t size )
 {
 	if( !HasStream() )
 	{
 		return;
 	}
 
-	mStream->write( (char*)data  , size );
+	mStream->read( (char*)data  , size );
 }
 
 //================================================================================
 // 閉じる
-void DataWriter::Close()
+void DataReader::Close()
 {
 	if( !HasStream() )
 	{
@@ -60,7 +60,7 @@ void DataWriter::Close()
 
 //================================================================================
 // 移動させる
-void DataWriter::Seek( size_t size , bool reverse )
+void DataReader::Seek( size_t size , bool reverse )
 {
 	if( !HasStream() )
 	{
@@ -72,7 +72,7 @@ void DataWriter::Seek( size_t size , bool reverse )
 
 //================================================================================
 // 開いているか
-bool DataWriter::IsOpen()const
+bool DataReader::IsOpen()const
 {
 	if( !HasStream() )
 	{

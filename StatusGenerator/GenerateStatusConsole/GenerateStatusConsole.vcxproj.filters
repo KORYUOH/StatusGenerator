@@ -17,6 +17,9 @@
     <ClCompile Include="Data\Memory\DataWriter.cpp">
       <Filter>Data\Memory</Filter>
     </ClCompile>
+    <ClCompile Include="Data\Memory\DataReader.cpp">
+      <Filter>Data\Memory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="StatusGenerator">
@@ -47,6 +50,9 @@
       <Filter>Cript</Filter>
     </ClInclude>
     <ClInclude Include="Data\Memory\DataWriter.h">
+      <Filter>Data\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\Memory\DataReader.h">
       <Filter>Data\Memory</Filter>
     </ClInclude>
   </ItemGroup>

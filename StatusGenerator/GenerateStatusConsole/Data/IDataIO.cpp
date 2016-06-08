@@ -6,7 +6,8 @@
 IDataIO::IDataIO():
 	FolderPath(""),
 	FileName(""),
-	mStream( nullptr )
+	mStream( nullptr ),
+	mIOFlag( 0 )
 {
 }
 
@@ -15,7 +16,8 @@ IDataIO::IDataIO():
 IDataIO::IDataIO(const std::string& aPath):
 	FolderPath(""),
 	FileName(""),
-	mStream( nullptr )
+	mStream( nullptr ),
+	mIOFlag( 0 )
 {
 }
 
@@ -24,7 +26,8 @@ IDataIO::IDataIO(const std::string& aPath):
 IDataIO::IDataIO(const std::string& aFolder , const std::string& aFileName):
 	FolderPath(aFolder),
 	FileName(aFileName),
-	mStream( nullptr )
+	mStream( nullptr ),
+	mIOFlag( 0 )
 {
 }
 
@@ -72,6 +75,27 @@ bool IDataIO::HasStream()const
 {
 	return nullptr != mStream;
 }
+
+//================================================================================
+// IOフラグの設定
+void IDataIO::SetIOFlag( int flag )
+{
+	mIOFlag |= flag;
+}
+//================================================================================
+// IOフラグのリセット
+void IDataIO::ResetIOFlag( int flag )
+{
+	mIOFlag &= (!flag);
+}
+
+
+
+
+
+
+
+
 
 
 

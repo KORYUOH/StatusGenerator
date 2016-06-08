@@ -58,6 +58,18 @@ class IDataIO
 		 */
 		virtual void Close();
 
+		/** 
+		 * @brief		IOフラグの設定
+		 * @param		フラグ
+		 */
+		void SetIOFlag( int flag );
+		
+		/** 
+		 * @brief		IOフラグのリセット
+		 * @param		フラグ
+		 */
+		void ResetIOFlag( int flag );
+
 	protected:
 		
 		/** 
@@ -70,7 +82,9 @@ class IDataIO
 
 		std::string FolderPath;
 		std::string FileName;
-		std::ios* mStream;
+		std::fstream* mStream;
+
+		int mIOFlag;
 
 };
 

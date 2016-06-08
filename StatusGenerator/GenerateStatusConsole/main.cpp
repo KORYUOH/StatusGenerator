@@ -3,6 +3,7 @@
 #include	"const.h"
 #include	"../StatusGenerator/StatusGenerator.h"
 #include	"../Cript/Cripter.h"
+#include	"Data/Memory/DataWriter.h"
 using namespace std;
 
 
@@ -117,6 +118,13 @@ int main(int argc, char* argv[])
 
 	}
 	ifs2.close();
+
+	DataWriter writer( "./" , "test.dat" );
+	writer.SetIOFlag( ios::out | ios::binary ); 
+	writer.Open();
+	cout << writer.IsOpen() << endl;
+	writer.ReadWrite( &r , sizeof( r ) );
+	writer.Close();
 
 
 	return 0;
