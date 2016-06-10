@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GenerateStatusConsole", "GenerateStatusConsole\GenerateStatusConsole.vcxproj", "{29A3A888-98FE-45A7-829B-ED95B880F994}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GenerateStatusGUI", "GenerateStatusGUI\GenerateStatusGUI.vcxproj", "{47F59F8A-B608-489D-B3D9-3DBD795AEECB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +17,10 @@ Global
 		{29A3A888-98FE-45A7-829B-ED95B880F994}.Debug|Win32.Build.0 = Debug|Win32
 		{29A3A888-98FE-45A7-829B-ED95B880F994}.Release|Win32.ActiveCfg = Release|Win32
 		{29A3A888-98FE-45A7-829B-ED95B880F994}.Release|Win32.Build.0 = Release|Win32
+		{47F59F8A-B608-489D-B3D9-3DBD795AEECB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{47F59F8A-B608-489D-B3D9-3DBD795AEECB}.Debug|Win32.Build.0 = Debug|Win32
+		{47F59F8A-B608-489D-B3D9-3DBD795AEECB}.Release|Win32.ActiveCfg = Release|Win32
+		{47F59F8A-B608-489D-B3D9-3DBD795AEECB}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
