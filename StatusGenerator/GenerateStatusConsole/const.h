@@ -16,4 +16,13 @@
 
 ///Super定義
 #define DECLARE_INHERIT_CLASS( Base ) typedef Base Super;
+
+struct PlayerParam
+{
+	int HitPoint;
+	int Attack;
+	int Defence;
+	int Agility;
+};
+
 #endif

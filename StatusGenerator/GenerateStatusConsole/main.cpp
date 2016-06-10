@@ -4,6 +4,7 @@
 #include	"../StatusGenerator/StatusGenerator.h"
 #include	"../Cript/Cripter.h"
 #include	"Data/Memory/DataWriter.h"
+#include	"Generator/PlayerGenerator.h"
 using namespace std;
 
 
@@ -29,7 +30,39 @@ class Generator : public IStatusGenerator
 int main(int argc, char* argv[])
 {
 	CHECKLEAK
+
+		string player1;
+		string player2;
+		cout << "Player1 Name? : " ;
+		cin >> player1;
+		cout << "Player2 Name? : " ;
+		cin >> player2;
+
+		PlayerGenerator p1;
+		PlayerGenerator p2;
+
+		p1.NameEntry( player1 );
+		p2.NameEntry( player2 );
+		
+		while( p1.IsAlive() && p2.IsAlive() )
+		{
+			if( p1.IsWait() )
+				p1.Wait();
+			else
+			{
+				p1.Attack( p2 );
+				//getchar();
+			}
+			if( p2.IsWait() )
+				p2.Wait();
+			else
+			{
+				p2.Attack( p1 );
+				//getchar();
+			}
+		}
 	
+/*
 		std::cout << "Hello,World!" << std::endl;
 
 	Generator g;
@@ -126,6 +159,7 @@ int main(int argc, char* argv[])
 	writer.ReadWrite( &r , sizeof( r ) );
 	writer.Close();
 
+*/
 
 	return 0;
 }
