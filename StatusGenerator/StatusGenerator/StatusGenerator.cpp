@@ -33,6 +33,27 @@ void IStatusGenerator::SetSeed( const std::string& seed )
 }
 
 //================================================================================
+// 生成シードの生成
+void IStatusGenerator::SetSeed( unsigned int seed )
+{
+	if( HasEngine() )
+	{
+		FreeEngine();
+	}
+
+	mSeed = seed;
+	mEngine = new mt19937( mSeed );
+}
+
+//================================================================================
+// 生成シードの取得
+unsigned int IStatusGenerator::GetSeed()const
+{
+	return mSeed;
+}
+
+
+//================================================================================
 // 値取得
 int IStatusGenerator::Roll( const struct GenerateLimit& limit )
 {

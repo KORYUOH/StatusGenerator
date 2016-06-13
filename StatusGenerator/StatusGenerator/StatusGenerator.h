@@ -42,6 +42,18 @@ class IStatusGenerator
 		 * @param[in]	seed : データシード文字列
 		 */
 		void SetSeed( const std::string& seed );
+
+		/** 
+		 * @brief		生成シードの設定
+		 * @param		seed : シード値
+		 */
+		void SetSeed( unsigned int seed );
+		
+		/** 
+		 * @brief		シード値の取得
+		 * @return		シード値
+		 */
+		unsigned int GetSeed()const;
 		
 	protected:
 
