@@ -21,7 +21,7 @@ class PlayerGenerator : public IStatusGenerator
 
 		void NameEntry( const std::string& name );
 
-		void Attack( PlayerGenerator& Target );
+		std::string Attack( PlayerGenerator& Target );
 
 		void Wait();
 
@@ -29,7 +29,7 @@ class PlayerGenerator : public IStatusGenerator
 
 		bool IsAlive()const;
 
-		void PrintStatus(bool all = false);
+		std::string PrintStatus(bool all = false);
 
 	protected:
 

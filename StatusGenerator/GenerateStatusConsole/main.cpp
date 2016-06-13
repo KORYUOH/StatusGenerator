@@ -50,14 +50,14 @@ int main(int argc, char* argv[])
 				p1.Wait();
 			else
 			{
-				p1.Attack( p2 );
+				cout << p1.Attack( p2 );
 				//getchar();
 			}
 			if( p2.IsWait() )
 				p2.Wait();
 			else
 			{
-				p2.Attack( p1 );
+				cout << p2.Attack( p1 );
 				//getchar();
 			}
 		}

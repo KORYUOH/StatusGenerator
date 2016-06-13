@@ -76,12 +76,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\GenerateStatusConsole\Generator\PlayerGenerator.h" />
+    <ClInclude Include="..\StatusGenerator\StatusGenerator.h" />
+    <ClInclude Include="const.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GenerateStatusGUI.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\GenerateStatusConsole\Generator\PlayerGenerator.cpp" />
+    <ClCompile Include="..\StatusGenerator\StatusGenerator.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

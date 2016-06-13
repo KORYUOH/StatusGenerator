@@ -1,5 +1,5 @@
 ﻿#include "PlayerGenerator.h"
-#include <iostream>
+#include <sstream>
 
 using namespace std;
 
@@ -35,7 +35,7 @@ void PlayerGenerator::Generate( PlayerParam& param )
 	PrintStatus( true );
 }
 
-void PlayerGenerator::Attack( PlayerGenerator& Target )
+string PlayerGenerator::Attack( PlayerGenerator& Target )
 {
 	bool bIsCritical = false;
 	int dmg = MinBase + Dice ( 1 , Base + ( mParam.Attack - Target.mParam.Defence ) - MinBase );
@@ -53,13 +53,17 @@ void PlayerGenerator::Attack( PlayerGenerator& Target )
 		Target.mNowHitPoint = 0;
 	}
 
-	cout << mName << "のこうげき" << endl;
+	stringstream sstr;
+
+	sstr << mName << "のこうげき" << endl;
 	if( bIsCritical )
-		cout << "クリティカル！ ";
-	cout << Target.mName << "に" << dmg << "ダメージを与えた"<<endl;
+		sstr << "クリティカル！ ";
+	sstr << Target.mName << "に" << dmg << "ダメージを与えた"<<endl;
 
 	PrintStatus();
 	Target.PrintStatus();
+
+	return sstr.str();
 
 }
 
@@ -84,26 +88,29 @@ bool PlayerGenerator::IsAlive()const
 	return mNowHitPoint > 0;
 }
 
-void PlayerGenerator::PrintStatus(bool all)
+string PlayerGenerator::PrintStatus(bool all)
 {
-	cout << "================================================================================"<<endl;
-	cout << mName << endl;
-	cout << "HP : " << mNowHitPoint << " / " << mParam.HitPoint << endl;
-	cout << "[";
+	stringstream sstr;
+	sstr << "================================================================================"<<endl;
+	sstr << mName << endl;
+	sstr << "HP : " << mNowHitPoint << " / " << mParam.HitPoint << endl;
+	sstr << "[";
 	const int max = 51;
 	for( int i = 1; i < max ; ++i )
 	{
 		if( ((float)i/(float)max) <= ( (float)mNowHitPoint / (float)mParam.HitPoint ) )
-			cout  << "*";
+			sstr  << "*";
 		else
-			cout << " ";
+			sstr << " ";
 	}
-	cout << "]" << endl;
+	sstr << "]" << endl;
 	if( !all )
-		return;
-	cout << "ATK : " << mParam.Attack << endl;
-	cout << "DEF : " << mParam.Defence << endl;
-	cout << "AGI : " << mParam.Agility << endl;
+		return sstr.str();
+	sstr << "ATK : " << mParam.Attack << endl;
+	sstr << "DEF : " << mParam.Defence << endl;
+	sstr << "AGI : " << mParam.Agility << endl;
+
+	return sstr.str();
 }
 
 

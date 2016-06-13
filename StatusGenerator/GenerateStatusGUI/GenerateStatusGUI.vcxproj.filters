@@ -8,6 +8,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="const.h" />
+    <ClInclude Include="..\StatusGenerator\StatusGenerator.h" />
+    <ClInclude Include="..\GenerateStatusConsole\Generator\PlayerGenerator.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GenerateStatusGUI.rc">
@@ -16,5 +19,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\StatusGenerator\StatusGenerator.cpp" />
+    <ClCompile Include="..\GenerateStatusConsole\Generator\PlayerGenerator.cpp" />
   </ItemGroup>
 </Project>
