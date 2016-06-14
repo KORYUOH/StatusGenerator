@@ -11,6 +11,7 @@
     <ClInclude Include="const.h" />
     <ClInclude Include="..\StatusGenerator\StatusGenerator.h" />
     <ClInclude Include="..\GenerateStatusConsole\Generator\PlayerGenerator.h" />
+    <ClInclude Include="..\charset\CharEnc.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GenerateStatusGUI.rc">
@@ -21,5 +22,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="..\StatusGenerator\StatusGenerator.cpp" />
     <ClCompile Include="..\GenerateStatusConsole\Generator\PlayerGenerator.cpp" />
+    <ClCompile Include="..\charset\CharEnc.cpp" />
   </ItemGroup>
 </Project>
